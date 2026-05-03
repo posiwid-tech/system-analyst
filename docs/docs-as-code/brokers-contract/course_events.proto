@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package course.v1;
+
+import "google/protobuf/timestamp.proto";
+
+message Event {
+  string event_id = 1;
+  EventType event_type = 2;
+  google.protobuf.Timestamp created_time = 3;
+  Course course = 4;
+}
+
+message Course {
+  string id = 1;
+  string title = 2;
+  string description = 3;
+  string author_id = 4;
+  int32 duration_hours = 5;
+  CourseStatus status = 6;
+  google.protobuf.Timestamp created_at = 7;
+}
+
+enum EventType {
+  EVENT_TYPE_UNSPECIFIED = 0;
+  COURSE_CREATED = 1;
+  COURSE_UPDATED = 2;
+  COURSE_PUBLISHED = 3;
+  COURSE_ARCHIVED = 4;
+  COURSE_DELETED = 5;
+}
+
+enum CourseStatus {
+  COURSE_STATUS_UNSPECIFIED = 0;
+  DRAFT = 1;
+  PUBLISHED = 2;
+  ARCHIVED = 3;
+}
