@@ -11,8 +11,11 @@ flowchart LR
 
     notification["Система уведомлений<br/>[External System]<br/><br/>Отправляет уведомления<br/>пользователям"]
 
+    space_booking_system["Система бронирования <br/>отдельных площадок<br/>[Booking System]<br/><br/>Предоставляет данные пространств<br/>со своими системами бронирования"]
+
     renter -->|"Просматривает и бронирует"| booking
     admin -->|"Управляет ресурсами"| booking
     booking -->|"Оплата / возврат"| payment
     payment -->|"Результат операции"| booking
     booking -->|"Данные для уведомления"| notification
+    space_booking_system-->|"Данные для бронирования"| booking
