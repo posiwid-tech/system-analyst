@@ -19,6 +19,6 @@ flowchart LR
     booking -->|"Оплата / возврат"| payment
     payment -->|"Результат операции"| booking
     booking -->|"Данные для уведомления"| notification
-    space_booking_system-->|"Данные по свободным слотам/Подтверждение бронирования"| booking
-    booking -->|"Запрос свободных слотов/Запрос бронирования слота"| space_booking_system
+    space_booking_system-->|"Предоставляет данные по слотам и подтверждает бронь"| booking
+    booking -->|"Запрашивает свободные слоты и бронирует"| space_booking_system
 ```
